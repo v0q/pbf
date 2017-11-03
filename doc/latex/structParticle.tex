@@ -1,0 +1,85 @@
+\hypertarget{structParticle}{}\section{Particle Struct Reference}
+\label{structParticle}\index{Particle@{Particle}}
+
+
+Simple particle struct holding the position, velocity etc.  
+
+
+
+
+{\ttfamily \#include $<$Particle.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structParticle_ac27e166117e21a32c2a0dfe4bd6fd8bd}{Particle} (const float \&\+\_\+x=0.f, const float \&\+\_\+y=0.f, const float \&\+\_\+z=0.f, const float \&\+\_\+r=0.\+125f)
+\begin{DoxyCompactList}\small\item\em \hyperlink{structParticle}{Particle} Default ctor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ngl\+::\+Vec3 \hyperlink{structParticle_a2b5ef8d7207002ec8e887492a5bbe9f2}{m\+\_\+pos}\hypertarget{structParticle_a2b5ef8d7207002ec8e887492a5bbe9f2}{}\label{structParticle_a2b5ef8d7207002ec8e887492a5bbe9f2}
+
+\begin{DoxyCompactList}\small\item\em m\+\_\+pos Position of a particle \end{DoxyCompactList}\item 
+ngl\+::\+Vec3 \hyperlink{structParticle_a07d3e906cc3a72402264eef170928dc2}{m\+\_\+pred\+Pos}\hypertarget{structParticle_a07d3e906cc3a72402264eef170928dc2}{}\label{structParticle_a07d3e906cc3a72402264eef170928dc2}
+
+\begin{DoxyCompactList}\small\item\em m\+\_\+pred\+Pos Predicted position of a particle \end{DoxyCompactList}\item 
+ngl\+::\+Vec3 \hyperlink{structParticle_a0193dd643fac3bea35449487b6a01bb8}{m\+\_\+pos\+Update}\hypertarget{structParticle_a0193dd643fac3bea35449487b6a01bb8}{}\label{structParticle_a0193dd643fac3bea35449487b6a01bb8}
+
+\begin{DoxyCompactList}\small\item\em m\+\_\+pos\+Update Calculated position update of a particle \end{DoxyCompactList}\item 
+ngl\+::\+Vec3 \hyperlink{structParticle_a4098b3ed1500b5994784b1de15d19b34}{m\+\_\+vel}\hypertarget{structParticle_a4098b3ed1500b5994784b1de15d19b34}{}\label{structParticle_a4098b3ed1500b5994784b1de15d19b34}
+
+\begin{DoxyCompactList}\small\item\em m\+\_\+vel Velocity of a particle \end{DoxyCompactList}\item 
+ngl\+::\+Vec3 \hyperlink{structParticle_a71714f50096808645b525a035d1109cc}{m\+\_\+ext\+Forces}\hypertarget{structParticle_a71714f50096808645b525a035d1109cc}{}\label{structParticle_a71714f50096808645b525a035d1109cc}
+
+\begin{DoxyCompactList}\small\item\em m\+\_\+ext\+Forces External forces to a particle \end{DoxyCompactList}\item 
+ngl\+::\+Vec4 \hyperlink{structParticle_a28fb9bc37248c0463a84fe1a302bfb18}{m\+\_\+colour}\hypertarget{structParticle_a28fb9bc37248c0463a84fe1a302bfb18}{}\label{structParticle_a28fb9bc37248c0463a84fe1a302bfb18}
+
+\begin{DoxyCompactList}\small\item\em m\+\_\+colour Colour of a particle \end{DoxyCompactList}\item 
+float \hyperlink{structParticle_ab78b76aeb4d163132a0c27ea4c5beb75}{m\+\_\+mass}\hypertarget{structParticle_ab78b76aeb4d163132a0c27ea4c5beb75}{}\label{structParticle_ab78b76aeb4d163132a0c27ea4c5beb75}
+
+\begin{DoxyCompactList}\small\item\em m\+\_\+mass Mass of a particle \end{DoxyCompactList}\item 
+float \hyperlink{structParticle_af6aee0d324572f74a1bdc28937d04a0b}{m\+\_\+radius}\hypertarget{structParticle_af6aee0d324572f74a1bdc28937d04a0b}{}\label{structParticle_af6aee0d324572f74a1bdc28937d04a0b}
+
+\begin{DoxyCompactList}\small\item\em m\+\_\+radius Radius of a particle \end{DoxyCompactList}\item 
+float \hyperlink{structParticle_a7ef5758b3dbc3ea263b670012f0c2fe5}{m\+\_\+density}\hypertarget{structParticle_a7ef5758b3dbc3ea263b670012f0c2fe5}{}\label{structParticle_a7ef5758b3dbc3ea263b670012f0c2fe5}
+
+\begin{DoxyCompactList}\small\item\em m\+\_\+density Density of a particle \end{DoxyCompactList}\item 
+float \hyperlink{structParticle_a253dea0d4438cac9831c22f75c2b8163}{m\+\_\+lambda}\hypertarget{structParticle_a253dea0d4438cac9831c22f75c2b8163}{}\label{structParticle_a253dea0d4438cac9831c22f75c2b8163}
+
+\begin{DoxyCompactList}\small\item\em m\+\_\+lambda Scaling factor of a particle \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simple particle struct holding the position, velocity etc. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Particle@{Particle}!Particle@{Particle}}
+\index{Particle@{Particle}!Particle@{Particle}}
+\subsubsection[{\texorpdfstring{Particle(const float \&\+\_\+x=0.\+f, const float \&\+\_\+y=0.\+f, const float \&\+\_\+z=0.\+f, const float \&\+\_\+r=0.\+125f)}{Particle(const float &_x=0.f, const float &_y=0.f, const float &_z=0.f, const float &_r=0.125f)}}]{\setlength{\rightskip}{0pt plus 5cm}Particle\+::\+Particle (
+\begin{DoxyParamCaption}
+\item[{const float \&}]{\+\_\+x = {\ttfamily 0.f}, }
+\item[{const float \&}]{\+\_\+y = {\ttfamily 0.f}, }
+\item[{const float \&}]{\+\_\+z = {\ttfamily 0.f}, }
+\item[{const float \&}]{\+\_\+r = {\ttfamily 0.125f}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structParticle_ac27e166117e21a32c2a0dfe4bd6fd8bd}{}\label{structParticle_ac27e166117e21a32c2a0dfe4bd6fd8bd}
+
+
+\hyperlink{structParticle}{Particle} Default ctor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \+\_\+x} & Initial x-\/position \\
+\hline
+\mbox{\tt in}  & {\em \+\_\+y} & Initial y-\/position \\
+\hline
+\mbox{\tt in}  & {\em \+\_\+z} & Initial z-\/position \\
+\hline
+\mbox{\tt in}  & {\em \+\_\+r} & Radius of the particle \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{Particle_8h}{Particle.\+h}\end{DoxyCompactItemize}

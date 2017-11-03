@@ -1,0 +1,205 @@
+\hypertarget{classFluidSolver}{}\section{Fluid\+Solver Class Reference}
+\label{classFluidSolver}\index{Fluid\+Solver@{Fluid\+Solver}}
+
+
+Solver implementing the algorithm defined in the original P\+BF paper by M. Macklin \& M. Müller.  
+
+
+
+
+{\ttfamily \#include $<$Fluid\+Solver.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFluidSolver_acd96a4e00ce999f976eaeb5050d1e50d}{Fluid\+Solver} ()\hypertarget{classFluidSolver_acd96a4e00ce999f976eaeb5050d1e50d}{}\label{classFluidSolver_acd96a4e00ce999f976eaeb5050d1e50d}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classFluidSolver}{Fluid\+Solver} Default ctor. \end{DoxyCompactList}\item 
+\hyperlink{classFluidSolver_a3f967133e2320b383457cfef08211071}{$\sim$\+Fluid\+Solver} ()\hypertarget{classFluidSolver_a3f967133e2320b383457cfef08211071}{}\label{classFluidSolver_a3f967133e2320b383457cfef08211071}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classFluidSolver}{Fluid\+Solver} Default dtor. \end{DoxyCompactList}\item 
+void \hyperlink{classFluidSolver_a0f166fa79f22dfd64609a115f94cfa80}{predict\+Pos} (\hyperlink{structParticle}{Particle} $\ast$\&io\+\_\+p, const float \&\+\_\+t)
+\begin{DoxyCompactList}\small\item\em predict\+Pos Predicts the particle\textquotesingle{}s initial position in the frame and updates its velocity based on the gravity and external forces \end{DoxyCompactList}\item 
+void \hyperlink{classFluidSolver_a9c7642bcd69afed7b9f324a77211500f}{compute\+Lambda} (std\+::vector$<$ \hyperlink{structParticle}{Particle} $\ast$ $>$ \&io\+\_\+particles, const unsigned int \&\+\_\+current\+Particle, unsigned int $\ast$\+\_\+neighbors, const unsigned int \&\+\_\+num\+Neighbors)
+\begin{DoxyCompactList}\small\item\em compute\+Lambda Computes the scaling factor for a particle, used for the position update calculations (formula 11) \end{DoxyCompactList}\item 
+void \hyperlink{classFluidSolver_a45ad268c542e07870828e44f26543f5c}{compute\+Density} (std\+::vector$<$ \hyperlink{structParticle}{Particle} $\ast$ $>$ \&io\+\_\+particles, const unsigned int \&\+\_\+current\+Particle, unsigned int $\ast$\+\_\+neighbors, const unsigned int \&\+\_\+num\+Neighbors)
+\begin{DoxyCompactList}\small\item\em compute\+Density Computes the density of a particle based on the neighboring particles (formula 2) \end{DoxyCompactList}\item 
+void \hyperlink{classFluidSolver_ab7568d71071d2623c1d25a9a8f745c50}{compute\+Vorticity\+And\+X\+S\+PH} (std\+::vector$<$ \hyperlink{structParticle}{Particle} $\ast$ $>$ \&io\+\_\+particles, const unsigned int \&\+\_\+current\+Particle, unsigned int $\ast$\+\_\+neighbors, const unsigned int \&\+\_\+num\+Neighbors, float \&\+\_\+t)
+\begin{DoxyCompactList}\small\item\em compute\+Vorticity\+And\+X\+S\+PH Computes and adds xsph viscosity and vorticity confiment to the particles velocity (formulas 16 \& 17) \end{DoxyCompactList}\item 
+float \hyperlink{classFluidSolver_a3fa7473eeaeceaa1431cf3373a529c56}{compute\+Artificial\+Pressure} (ngl\+::\+Vec3 \&\+\_\+p, ngl\+::\+Vec3 \&\+\_\+n)
+\begin{DoxyCompactList}\small\item\em compute\+Artificial\+Pressure Computes artificial pressure correction for particle position update \end{DoxyCompactList}\item 
+float \hyperlink{classFluidSolver_a28e8d248600643310a501c4394597721}{compute\+Density\+Kernel} (const float \&\+\_\+r)
+\begin{DoxyCompactList}\small\item\em compute\+Density\+Kernel Calculates the weight of a neighboring particle using a poly6 kernel \end{DoxyCompactList}\item 
+ngl\+::\+Vec3 \hyperlink{classFluidSolver_a18546e3a0f166ad0e58fd2f0175e1d82}{compute\+Density\+Kernel\+Gradient} (ngl\+::\+Vec3 \&\+\_\+p, ngl\+::\+Vec3 \&\+\_\+n)
+\begin{DoxyCompactList}\small\item\em compute\+Density\+Kernel\+Gradient Calculates the gradient of the density kernel using a spiky kernel \end{DoxyCompactList}\item 
+ngl\+::\+Vec3 \hyperlink{classFluidSolver_ad32394bc1c55ff2bd52df2cc0f003c7a}{calc\+Position\+Update} (std\+::vector$<$ \hyperlink{structParticle}{Particle} $\ast$ $>$ \&io\+\_\+particles, const unsigned int \&\+\_\+current\+Particle, unsigned int $\ast$\+\_\+neighbors, const unsigned int \&\+\_\+num\+Neighbors)
+\begin{DoxyCompactList}\small\item\em calc\+Position\+Update Calculates a position update for a particle \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Solver implementing the algorithm defined in the original P\+BF paper by M. Macklin \& M. Müller. 
+
+\subsection{Member Function Documentation}
+\index{Fluid\+Solver@{Fluid\+Solver}!calc\+Position\+Update@{calc\+Position\+Update}}
+\index{calc\+Position\+Update@{calc\+Position\+Update}!Fluid\+Solver@{Fluid\+Solver}}
+\subsubsection[{\texorpdfstring{calc\+Position\+Update(std\+::vector$<$ Particle $\ast$ $>$ \&io\+\_\+particles, const unsigned int \&\+\_\+current\+Particle, unsigned int $\ast$\+\_\+neighbors, const unsigned int \&\+\_\+num\+Neighbors)}{calcPositionUpdate(std::vector< Particle * > &io_particles, const unsigned int &_currentParticle, unsigned int *_neighbors, const unsigned int &_numNeighbors)}}]{\setlength{\rightskip}{0pt plus 5cm}ngl\+::\+Vec3 Fluid\+Solver\+::calc\+Position\+Update (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf Particle} $\ast$ $>$ \&}]{io\+\_\+particles, }
+\item[{const unsigned int \&}]{\+\_\+current\+Particle, }
+\item[{unsigned int $\ast$}]{\+\_\+neighbors, }
+\item[{const unsigned int \&}]{\+\_\+num\+Neighbors}
+\end{DoxyParamCaption}
+)}\hypertarget{classFluidSolver_ad32394bc1c55ff2bd52df2cc0f003c7a}{}\label{classFluidSolver_ad32394bc1c55ff2bd52df2cc0f003c7a}
+
+
+calc\+Position\+Update Calculates a position update for a particle 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\index{Fluid\+Solver@{Fluid\+Solver}!compute\+Artificial\+Pressure@{compute\+Artificial\+Pressure}}
+\index{compute\+Artificial\+Pressure@{compute\+Artificial\+Pressure}!Fluid\+Solver@{Fluid\+Solver}}
+\subsubsection[{\texorpdfstring{compute\+Artificial\+Pressure(ngl\+::\+Vec3 \&\+\_\+p, ngl\+::\+Vec3 \&\+\_\+n)}{computeArtificialPressure(ngl::Vec3 &_p, ngl::Vec3 &_n)}}]{\setlength{\rightskip}{0pt plus 5cm}float Fluid\+Solver\+::compute\+Artificial\+Pressure (
+\begin{DoxyParamCaption}
+\item[{ngl\+::\+Vec3 \&}]{\+\_\+p, }
+\item[{ngl\+::\+Vec3 \&}]{\+\_\+n}
+\end{DoxyParamCaption}
+)}\hypertarget{classFluidSolver_a3fa7473eeaeceaa1431cf3373a529c56}{}\label{classFluidSolver_a3fa7473eeaeceaa1431cf3373a529c56}
+
+
+compute\+Artificial\+Pressure Computes artificial pressure correction for particle position update 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \+\_\+p} & Vector holding the predicted position of the current particle \\
+\hline
+\mbox{\tt in}  & {\em \+\_\+n} & Vector holding the predicted position of a neighboring particle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Correction scalar 
+\end{DoxyReturn}
+\index{Fluid\+Solver@{Fluid\+Solver}!compute\+Density@{compute\+Density}}
+\index{compute\+Density@{compute\+Density}!Fluid\+Solver@{Fluid\+Solver}}
+\subsubsection[{\texorpdfstring{compute\+Density(std\+::vector$<$ Particle $\ast$ $>$ \&io\+\_\+particles, const unsigned int \&\+\_\+current\+Particle, unsigned int $\ast$\+\_\+neighbors, const unsigned int \&\+\_\+num\+Neighbors)}{computeDensity(std::vector< Particle * > &io_particles, const unsigned int &_currentParticle, unsigned int *_neighbors, const unsigned int &_numNeighbors)}}]{\setlength{\rightskip}{0pt plus 5cm}void Fluid\+Solver\+::compute\+Density (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf Particle} $\ast$ $>$ \&}]{io\+\_\+particles, }
+\item[{const unsigned int \&}]{\+\_\+current\+Particle, }
+\item[{unsigned int $\ast$}]{\+\_\+neighbors, }
+\item[{const unsigned int \&}]{\+\_\+num\+Neighbors}
+\end{DoxyParamCaption}
+)}\hypertarget{classFluidSolver_a45ad268c542e07870828e44f26543f5c}{}\label{classFluidSolver_a45ad268c542e07870828e44f26543f5c}
+
+
+compute\+Density Computes the density of a particle based on the neighboring particles (formula 2) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\index{Fluid\+Solver@{Fluid\+Solver}!compute\+Density\+Kernel@{compute\+Density\+Kernel}}
+\index{compute\+Density\+Kernel@{compute\+Density\+Kernel}!Fluid\+Solver@{Fluid\+Solver}}
+\subsubsection[{\texorpdfstring{compute\+Density\+Kernel(const float \&\+\_\+r)}{computeDensityKernel(const float &_r)}}]{\setlength{\rightskip}{0pt plus 5cm}float Fluid\+Solver\+::compute\+Density\+Kernel (
+\begin{DoxyParamCaption}
+\item[{const float \&}]{\+\_\+r}
+\end{DoxyParamCaption}
+)}\hypertarget{classFluidSolver_a28e8d248600643310a501c4394597721}{}\label{classFluidSolver_a28e8d248600643310a501c4394597721}
+
+
+compute\+Density\+Kernel Calculates the weight of a neighboring particle using a poly6 kernel 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \+\_\+r} & Distance between two particles \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Weight of the neighboring particle 
+\end{DoxyReturn}
+\index{Fluid\+Solver@{Fluid\+Solver}!compute\+Density\+Kernel\+Gradient@{compute\+Density\+Kernel\+Gradient}}
+\index{compute\+Density\+Kernel\+Gradient@{compute\+Density\+Kernel\+Gradient}!Fluid\+Solver@{Fluid\+Solver}}
+\subsubsection[{\texorpdfstring{compute\+Density\+Kernel\+Gradient(ngl\+::\+Vec3 \&\+\_\+p, ngl\+::\+Vec3 \&\+\_\+n)}{computeDensityKernelGradient(ngl::Vec3 &_p, ngl::Vec3 &_n)}}]{\setlength{\rightskip}{0pt plus 5cm}ngl\+::\+Vec3 Fluid\+Solver\+::compute\+Density\+Kernel\+Gradient (
+\begin{DoxyParamCaption}
+\item[{ngl\+::\+Vec3 \&}]{\+\_\+p, }
+\item[{ngl\+::\+Vec3 \&}]{\+\_\+n}
+\end{DoxyParamCaption}
+)}\hypertarget{classFluidSolver_a18546e3a0f166ad0e58fd2f0175e1d82}{}\label{classFluidSolver_a18546e3a0f166ad0e58fd2f0175e1d82}
+
+
+compute\+Density\+Kernel\+Gradient Calculates the gradient of the density kernel using a spiky kernel 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \+\_\+p} & Predicted position of the current particle \\
+\hline
+\mbox{\tt in}  & {\em \+\_\+n} & Predicted position of a neighboring particle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Gradient vector 
+\end{DoxyReturn}
+\index{Fluid\+Solver@{Fluid\+Solver}!compute\+Lambda@{compute\+Lambda}}
+\index{compute\+Lambda@{compute\+Lambda}!Fluid\+Solver@{Fluid\+Solver}}
+\subsubsection[{\texorpdfstring{compute\+Lambda(std\+::vector$<$ Particle $\ast$ $>$ \&io\+\_\+particles, const unsigned int \&\+\_\+current\+Particle, unsigned int $\ast$\+\_\+neighbors, const unsigned int \&\+\_\+num\+Neighbors)}{computeLambda(std::vector< Particle * > &io_particles, const unsigned int &_currentParticle, unsigned int *_neighbors, const unsigned int &_numNeighbors)}}]{\setlength{\rightskip}{0pt plus 5cm}void Fluid\+Solver\+::compute\+Lambda (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf Particle} $\ast$ $>$ \&}]{io\+\_\+particles, }
+\item[{const unsigned int \&}]{\+\_\+current\+Particle, }
+\item[{unsigned int $\ast$}]{\+\_\+neighbors, }
+\item[{const unsigned int \&}]{\+\_\+num\+Neighbors}
+\end{DoxyParamCaption}
+)}\hypertarget{classFluidSolver_a9c7642bcd69afed7b9f324a77211500f}{}\label{classFluidSolver_a9c7642bcd69afed7b9f324a77211500f}
+
+
+compute\+Lambda Computes the scaling factor for a particle, used for the position update calculations (formula 11) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\index{Fluid\+Solver@{Fluid\+Solver}!compute\+Vorticity\+And\+X\+S\+PH@{compute\+Vorticity\+And\+X\+S\+PH}}
+\index{compute\+Vorticity\+And\+X\+S\+PH@{compute\+Vorticity\+And\+X\+S\+PH}!Fluid\+Solver@{Fluid\+Solver}}
+\subsubsection[{\texorpdfstring{compute\+Vorticity\+And\+X\+S\+P\+H(std\+::vector$<$ Particle $\ast$ $>$ \&io\+\_\+particles, const unsigned int \&\+\_\+current\+Particle, unsigned int $\ast$\+\_\+neighbors, const unsigned int \&\+\_\+num\+Neighbors, float \&\+\_\+t)}{computeVorticityAndXSPH(std::vector< Particle * > &io_particles, const unsigned int &_currentParticle, unsigned int *_neighbors, const unsigned int &_numNeighbors, float &_t)}}]{\setlength{\rightskip}{0pt plus 5cm}void Fluid\+Solver\+::compute\+Vorticity\+And\+X\+S\+PH (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf Particle} $\ast$ $>$ \&}]{io\+\_\+particles, }
+\item[{const unsigned int \&}]{\+\_\+current\+Particle, }
+\item[{unsigned int $\ast$}]{\+\_\+neighbors, }
+\item[{const unsigned int \&}]{\+\_\+num\+Neighbors, }
+\item[{float \&}]{\+\_\+t}
+\end{DoxyParamCaption}
+)}\hypertarget{classFluidSolver_ab7568d71071d2623c1d25a9a8f745c50}{}\label{classFluidSolver_ab7568d71071d2623c1d25a9a8f745c50}
+
+
+compute\+Vorticity\+And\+X\+S\+PH Computes and adds xsph viscosity and vorticity confiment to the particles velocity (formulas 16 \& 17) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\index{Fluid\+Solver@{Fluid\+Solver}!predict\+Pos@{predict\+Pos}}
+\index{predict\+Pos@{predict\+Pos}!Fluid\+Solver@{Fluid\+Solver}}
+\subsubsection[{\texorpdfstring{predict\+Pos(\+Particle $\ast$\&io\+\_\+p, const float \&\+\_\+t)}{predictPos(Particle *&io_p, const float &_t)}}]{\setlength{\rightskip}{0pt plus 5cm}void Fluid\+Solver\+::predict\+Pos (
+\begin{DoxyParamCaption}
+\item[{{\bf Particle} $\ast$\&}]{io\+\_\+p, }
+\item[{const float \&}]{\+\_\+t}
+\end{DoxyParamCaption}
+)}\hypertarget{classFluidSolver_a0f166fa79f22dfd64609a115f94cfa80}{}\label{classFluidSolver_a0f166fa79f22dfd64609a115f94cfa80}
+
+
+predict\+Pos Predicts the particle\textquotesingle{}s initial position in the frame and updates its velocity based on the gravity and external forces 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{FluidSolver_8h}{Fluid\+Solver.\+h}\item 
+src/Fluid\+Solver.\+cpp\end{DoxyCompactItemize}

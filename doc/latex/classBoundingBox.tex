@@ -1,0 +1,112 @@
+\hypertarget{classBoundingBox}{}\section{Bounding\+Box Class Reference}
+\label{classBoundingBox}\index{Bounding\+Box@{Bounding\+Box}}
+
+
+Simple \hyperlink{classBoundingBox}{Bounding\+Box} class to work as the boundaries of the simulation.  
+
+
+
+
+{\ttfamily \#include $<$Bounding\+Box.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBoundingBox_a6e401c4da5839950f1f30c8b8c4d1208}{Bounding\+Box} ()\hypertarget{classBoundingBox_a6e401c4da5839950f1f30c8b8c4d1208}{}\label{classBoundingBox_a6e401c4da5839950f1f30c8b8c4d1208}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classBoundingBox}{Bounding\+Box} empty ctor. \end{DoxyCompactList}\item 
+\hyperlink{classBoundingBox_a2a1c05a9eedd54d874b891de109ac067}{Bounding\+Box} (const ngl\+::\+Real \&\+\_\+minx, const ngl\+::\+Real \&\+\_\+maxx, const ngl\+::\+Real \&\+\_\+miny, const ngl\+::\+Real \&\+\_\+maxy, const ngl\+::\+Real \&\+\_\+minz, const ngl\+::\+Real \&\+\_\+maxz)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classBoundingBox}{Bounding\+Box} default ctor. \end{DoxyCompactList}\item 
+void \hyperlink{classBoundingBox_aabf95166e9742f17e9fb4de0feb116fd}{operator=} (const \hyperlink{classBoundingBox}{Bounding\+Box} \&\+\_\+rhs) noexcept
+\begin{DoxyCompactList}\small\item\em operator =, overloaded = operator for copying the coordinates of another Bounding\+Box-\/type object \end{DoxyCompactList}\item 
+void \hyperlink{classBoundingBox_ae71df3372b851b8f5afd770d605c0f23}{build\+Walls} ()\hypertarget{classBoundingBox_ae71df3372b851b8f5afd770d605c0f23}{}\label{classBoundingBox_ae71df3372b851b8f5afd770d605c0f23}
+
+\begin{DoxyCompactList}\small\item\em build\+Walls Method to build the walls based on the given min and max coordinates. Also calculates the normals and center points to be used in the collision detection/response calculations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ngl\+::\+Real \hyperlink{classBoundingBox_a258947af38a1fd2be5cfd748702b38cd}{m\+\_\+minx}\hypertarget{classBoundingBox_a258947af38a1fd2be5cfd748702b38cd}{}\label{classBoundingBox_a258947af38a1fd2be5cfd748702b38cd}
+
+\begin{DoxyCompactList}\small\item\em m\+\_\+minx Min x-\/coordinate \end{DoxyCompactList}\item 
+ngl\+::\+Real \hyperlink{classBoundingBox_accac5d66b22d132a94935c079ee25b40}{m\+\_\+maxx}\hypertarget{classBoundingBox_accac5d66b22d132a94935c079ee25b40}{}\label{classBoundingBox_accac5d66b22d132a94935c079ee25b40}
+
+\begin{DoxyCompactList}\small\item\em m\+\_\+maxx Max x-\/coordinate \end{DoxyCompactList}\item 
+ngl\+::\+Real \hyperlink{classBoundingBox_afac5177c4ec0e7fabc16eab1cdbdfafe}{m\+\_\+miny}\hypertarget{classBoundingBox_afac5177c4ec0e7fabc16eab1cdbdfafe}{}\label{classBoundingBox_afac5177c4ec0e7fabc16eab1cdbdfafe}
+
+\begin{DoxyCompactList}\small\item\em m\+\_\+miny Min y-\/coordinate \end{DoxyCompactList}\item 
+ngl\+::\+Real \hyperlink{classBoundingBox_a645ee20e05db317741f7c72e0f35da31}{m\+\_\+maxy}\hypertarget{classBoundingBox_a645ee20e05db317741f7c72e0f35da31}{}\label{classBoundingBox_a645ee20e05db317741f7c72e0f35da31}
+
+\begin{DoxyCompactList}\small\item\em m\+\_\+maxy Max y-\/coordinate \end{DoxyCompactList}\item 
+ngl\+::\+Real \hyperlink{classBoundingBox_a0261ebe3220714d53be827803e72dbc2}{m\+\_\+minz}\hypertarget{classBoundingBox_a0261ebe3220714d53be827803e72dbc2}{}\label{classBoundingBox_a0261ebe3220714d53be827803e72dbc2}
+
+\begin{DoxyCompactList}\small\item\em m\+\_\+minz Min z-\/coordinate \end{DoxyCompactList}\item 
+ngl\+::\+Real \hyperlink{classBoundingBox_a8e35ea84f95c8adaa0c68add6df2c0d3}{m\+\_\+maxz}\hypertarget{classBoundingBox_a8e35ea84f95c8adaa0c68add6df2c0d3}{}\label{classBoundingBox_a8e35ea84f95c8adaa0c68add6df2c0d3}
+
+\begin{DoxyCompactList}\small\item\em m\+\_\+maxz Max z-\/coordinate \end{DoxyCompactList}\item 
+\hyperlink{structWall}{Wall} \hyperlink{classBoundingBox_a8c69e197fe1adf9428b892f2736c5508}{m\+\_\+walls} \mbox{[}6\mbox{]}\hypertarget{classBoundingBox_a8c69e197fe1adf9428b892f2736c5508}{}\label{classBoundingBox_a8c69e197fe1adf9428b892f2736c5508}
+
+\begin{DoxyCompactList}\small\item\em m\+\_\+walls Array containing the 6 walls of the bounding box \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ ngl\+::\+Vertex\+Array\+Object $>$ \hyperlink{classBoundingBox_a943ca34be576502ae40b7236972e78b7}{m\+\_\+vao}\hypertarget{classBoundingBox_a943ca34be576502ae40b7236972e78b7}{}\label{classBoundingBox_a943ca34be576502ae40b7236972e78b7}
+
+\begin{DoxyCompactList}\small\item\em m\+\_\+vao Vertex Array Object for drawing the outline of the walls \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simple \hyperlink{classBoundingBox}{Bounding\+Box} class to work as the boundaries of the simulation. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Bounding\+Box@{Bounding\+Box}!Bounding\+Box@{Bounding\+Box}}
+\index{Bounding\+Box@{Bounding\+Box}!Bounding\+Box@{Bounding\+Box}}
+\subsubsection[{\texorpdfstring{Bounding\+Box(const ngl\+::\+Real \&\+\_\+minx, const ngl\+::\+Real \&\+\_\+maxx, const ngl\+::\+Real \&\+\_\+miny, const ngl\+::\+Real \&\+\_\+maxy, const ngl\+::\+Real \&\+\_\+minz, const ngl\+::\+Real \&\+\_\+maxz)}{BoundingBox(const ngl::Real &_minx, const ngl::Real &_maxx, const ngl::Real &_miny, const ngl::Real &_maxy, const ngl::Real &_minz, const ngl::Real &_maxz)}}]{\setlength{\rightskip}{0pt plus 5cm}Bounding\+Box\+::\+Bounding\+Box (
+\begin{DoxyParamCaption}
+\item[{const ngl\+::\+Real \&}]{\+\_\+minx, }
+\item[{const ngl\+::\+Real \&}]{\+\_\+maxx, }
+\item[{const ngl\+::\+Real \&}]{\+\_\+miny, }
+\item[{const ngl\+::\+Real \&}]{\+\_\+maxy, }
+\item[{const ngl\+::\+Real \&}]{\+\_\+minz, }
+\item[{const ngl\+::\+Real \&}]{\+\_\+maxz}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classBoundingBox_a2a1c05a9eedd54d874b891de109ac067}{}\label{classBoundingBox_a2a1c05a9eedd54d874b891de109ac067}
+
+
+\hyperlink{classBoundingBox}{Bounding\+Box} default ctor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \+\_\+minx} & Minimum x-\/coordinate \\
+\hline
+\mbox{\tt in}  & {\em \+\_\+maxx} & Maximum x-\/coordinate \\
+\hline
+\mbox{\tt in}  & {\em \+\_\+miny} & Minimum y-\/coordinate \\
+\hline
+\mbox{\tt in}  & {\em \+\_\+maxy} & Maximum x-\/coordinate \\
+\hline
+\mbox{\tt in}  & {\em \+\_\+minz} & Minimum z-\/coordinate \\
+\hline
+\mbox{\tt in}  & {\em \+\_\+maxz} & Maximum x-\/coordinate \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Bounding\+Box@{Bounding\+Box}!operator=@{operator=}}
+\index{operator=@{operator=}!Bounding\+Box@{Bounding\+Box}}
+\subsubsection[{\texorpdfstring{operator=(const Bounding\+Box \&\+\_\+rhs) noexcept}{operator=(const BoundingBox &_rhs) noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}void Bounding\+Box\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Bounding\+Box} \&}]{\+\_\+rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}\hypertarget{classBoundingBox_aabf95166e9742f17e9fb4de0feb116fd}{}\label{classBoundingBox_aabf95166e9742f17e9fb4de0feb116fd}
+
+
+operator =, overloaded = operator for copying the coordinates of another Bounding\+Box-\/type object 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \+\_\+rhs} & \hyperlink{classBoundingBox}{Bounding\+Box} to copy \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{BoundingBox_8h}{Bounding\+Box.\+h}\end{DoxyCompactItemize}

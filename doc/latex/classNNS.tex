@@ -1,0 +1,98 @@
+\hypertarget{classNNS}{}\section{N\+NS Class Reference}
+\label{classNNS}\index{N\+NS@{N\+NS}}
+
+
+Uniform grid implementation that creates the grid map and builds neighbor tables for each particle, neighbor table parallelised.  
+
+
+
+
+{\ttfamily \#include $<$N\+N\+S.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNNS_abade6f586869c6bfdac7c05eeaf50d9c}{N\+NS} ()\hypertarget{classNNS_abade6f586869c6bfdac7c05eeaf50d9c}{}\label{classNNS_abade6f586869c6bfdac7c05eeaf50d9c}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classNNS}{N\+NS} Default ctor. \end{DoxyCompactList}\item 
+\hyperlink{classNNS_a1d4eddea97d0ab3e7a2527b0c2bd39df}{$\sim$\+N\+NS} ()\hypertarget{classNNS_a1d4eddea97d0ab3e7a2527b0c2bd39df}{}\label{classNNS_a1d4eddea97d0ab3e7a2527b0c2bd39df}
+
+\begin{DoxyCompactList}\small\item\em $\sim$\+N\+NS Default dtor \end{DoxyCompactList}\item 
+void \hyperlink{classNNS_ad05c2587ca92a0d6d424383aca42a9b6}{init} (const \hyperlink{classBoundingBox}{Bounding\+Box} \&\+\_\+bb, const unsigned int \&\+\_\+particle\+Count, const unsigned int \&\+\_\+max\+Neighbors=60)
+\begin{DoxyCompactList}\small\item\em init Method to initialise the grid and prepare it for the nns \end{DoxyCompactList}\item 
+void \hyperlink{classNNS_a69702190a37743cb666da72c9828fb61}{build\+Table} (const std\+::vector$<$ \hyperlink{structParticle}{Particle} $\ast$ $>$ \&\+\_\+particles)
+\begin{DoxyCompactList}\small\item\em build\+Table Builds the grid and constructs the neighbor table for each particle \end{DoxyCompactList}\item 
+void \hyperlink{classNNS_af7b3f89428efe4016240c595ce66d500}{clean\+Table} ()\hypertarget{classNNS_af7b3f89428efe4016240c595ce66d500}{}\label{classNNS_af7b3f89428efe4016240c595ce66d500}
+
+\begin{DoxyCompactList}\small\item\em clean\+Table Cleans the grid and neighbor tables \end{DoxyCompactList}\item 
+std\+::pair$<$ unsigned int $\ast$, unsigned int $>$ \hyperlink{classNNS_a70bef5d583a31d9af81a72d529152a89}{get\+Neighbors} (const int \&\+\_\+pid)
+\begin{DoxyCompactList}\small\item\em get\+Neighbors Method to get the neighbors of a particle \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Uniform grid implementation that creates the grid map and builds neighbor tables for each particle, neighbor table parallelised. 
+
+\subsection{Member Function Documentation}
+\index{N\+NS@{N\+NS}!build\+Table@{build\+Table}}
+\index{build\+Table@{build\+Table}!N\+NS@{N\+NS}}
+\subsubsection[{\texorpdfstring{build\+Table(const std\+::vector$<$ Particle $\ast$ $>$ \&\+\_\+particles)}{buildTable(const std::vector< Particle * > &_particles)}}]{\setlength{\rightskip}{0pt plus 5cm}void N\+N\+S\+::build\+Table (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ {\bf Particle} $\ast$ $>$ \&}]{\+\_\+particles}
+\end{DoxyParamCaption}
+)}\hypertarget{classNNS_a69702190a37743cb666da72c9828fb61}{}\label{classNNS_a69702190a37743cb666da72c9828fb61}
+
+
+build\+Table Builds the grid and constructs the neighbor table for each particle 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \+\_\+particles} & Vector containing the particles \\
+\hline
+\end{DoxyParams}
+\index{N\+NS@{N\+NS}!get\+Neighbors@{get\+Neighbors}}
+\index{get\+Neighbors@{get\+Neighbors}!N\+NS@{N\+NS}}
+\subsubsection[{\texorpdfstring{get\+Neighbors(const int \&\+\_\+pid)}{getNeighbors(const int &_pid)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::pair$<$ unsigned int $\ast$, unsigned int $>$ N\+N\+S\+::get\+Neighbors (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{\+\_\+pid}
+\end{DoxyParamCaption}
+)}\hypertarget{classNNS_a70bef5d583a31d9af81a72d529152a89}{}\label{classNNS_a70bef5d583a31d9af81a72d529152a89}
+
+
+get\+Neighbors Method to get the neighbors of a particle 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \+\_\+pid} & Index of the particle in question \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pair containing the pointer to the neighbor table of the particle and the amount of neighbors 
+\end{DoxyReturn}
+\index{N\+NS@{N\+NS}!init@{init}}
+\index{init@{init}!N\+NS@{N\+NS}}
+\subsubsection[{\texorpdfstring{init(const Bounding\+Box \&\+\_\+bb, const unsigned int \&\+\_\+particle\+Count, const unsigned int \&\+\_\+max\+Neighbors=60)}{init(const BoundingBox &_bb, const unsigned int &_particleCount, const unsigned int &_maxNeighbors=60)}}]{\setlength{\rightskip}{0pt plus 5cm}void N\+N\+S\+::init (
+\begin{DoxyParamCaption}
+\item[{const {\bf Bounding\+Box} \&}]{\+\_\+bb, }
+\item[{const unsigned int \&}]{\+\_\+particle\+Count, }
+\item[{const unsigned int \&}]{\+\_\+max\+Neighbors = {\ttfamily 60}}
+\end{DoxyParamCaption}
+)}\hypertarget{classNNS_ad05c2587ca92a0d6d424383aca42a9b6}{}\label{classNNS_ad05c2587ca92a0d6d424383aca42a9b6}
+
+
+init Method to initialise the grid and prepare it for the nns 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \+\_\+bb} & Bounding box of the simulation \\
+\hline
+\mbox{\tt in}  & {\em \+\_\+particle\+Count} & \hyperlink{structParticle}{Particle} count \\
+\hline
+\mbox{\tt in}  & {\em \+\_\+max\+Neighbors} & Max neighbors per particle (if exceeded, the particles will be ignored) \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{NNS_8h}{N\+N\+S.\+h}\item 
+src/N\+N\+S.\+cpp\end{DoxyCompactItemize}

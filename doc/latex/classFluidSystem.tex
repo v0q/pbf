@@ -1,0 +1,60 @@
+\hypertarget{classFluidSystem}{}\section{Fluid\+System Class Reference}
+\label{classFluidSystem}\index{Fluid\+System@{Fluid\+System}}
+
+
+Class creating the particles and bringing together the solver and grid.  
+
+
+
+
+{\ttfamily \#include $<$Fluid\+System.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFluidSystem_a026c527ec418ae285285ffb2b877d1dc}{Fluid\+System} ()\hypertarget{classFluidSystem_a026c527ec418ae285285ffb2b877d1dc}{}\label{classFluidSystem_a026c527ec418ae285285ffb2b877d1dc}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classFluidSystem}{Fluid\+System} Default ctor. \end{DoxyCompactList}\item 
+\hyperlink{classFluidSystem_a568108df17c8fe0ec5fce2ad225ae0cc}{$\sim$\+Fluid\+System} ()\hypertarget{classFluidSystem_a568108df17c8fe0ec5fce2ad225ae0cc}{}\label{classFluidSystem_a568108df17c8fe0ec5fce2ad225ae0cc}
+
+\begin{DoxyCompactList}\small\item\em $\sim$\+Fluid\+System Default dtor \end{DoxyCompactList}\item 
+void \hyperlink{classFluidSystem_a21064e9269b8ec6f9825aaaaa1851292}{init} ()\hypertarget{classFluidSystem_a21064e9269b8ec6f9825aaaaa1851292}{}\label{classFluidSystem_a21064e9269b8ec6f9825aaaaa1851292}
+
+\begin{DoxyCompactList}\small\item\em init Initialises the system, creates particles and initialises the \hyperlink{classNNS}{N\+NS} class \end{DoxyCompactList}\item 
+void \hyperlink{classFluidSystem_a7161be2137b35e4b26699b1c64099bf9}{execute} ()\hypertarget{classFluidSystem_a7161be2137b35e4b26699b1c64099bf9}{}\label{classFluidSystem_a7161be2137b35e4b26699b1c64099bf9}
+
+\begin{DoxyCompactList}\small\item\em execute Executes the simulation loop \end{DoxyCompactList}\item 
+void \hyperlink{classFluidSystem_a837fcd22af848410dfc6d85fc9f0466d}{toggle\+Simulation} ()\hypertarget{classFluidSystem_a837fcd22af848410dfc6d85fc9f0466d}{}\label{classFluidSystem_a837fcd22af848410dfc6d85fc9f0466d}
+
+\begin{DoxyCompactList}\small\item\em toggle\+Simulation Toggles on and off whether to run the simulation or not \end{DoxyCompactList}\item 
+void \hyperlink{classFluidSystem_ae1bd21942521a81aa6e5671e6ec966b4}{toggle\+Waves} ()\hypertarget{classFluidSystem_ae1bd21942521a81aa6e5671e6ec966b4}{}\label{classFluidSystem_ae1bd21942521a81aa6e5671e6ec966b4}
+
+\begin{DoxyCompactList}\small\item\em toggle\+Waves Toggles on and off whether the \char`\"{}wave\char`\"{} machine should run or not \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{structParticle}{Particle} $\ast$ $>$ \hyperlink{classFluidSystem_a439b6c0049a0f84780b503bc6ed710c4}{get\+Particles} ()
+\begin{DoxyCompactList}\small\item\em get\+Particles \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class creating the particles and bringing together the solver and grid. 
+
+\subsection{Member Function Documentation}
+\index{Fluid\+System@{Fluid\+System}!get\+Particles@{get\+Particles}}
+\index{get\+Particles@{get\+Particles}!Fluid\+System@{Fluid\+System}}
+\subsubsection[{\texorpdfstring{get\+Particles()}{getParticles()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Particle} $\ast$$>$ Fluid\+System\+::get\+Particles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classFluidSystem_a439b6c0049a0f84780b503bc6ed710c4}{}\label{classFluidSystem_a439b6c0049a0f84780b503bc6ed710c4}
+
+
+get\+Particles 
+
+\begin{DoxyReturn}{Returns}
+Vector containing pointers to each particle 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{FluidSystem_8h}{Fluid\+System.\+h}\item 
+src/Fluid\+System.\+cpp\end{DoxyCompactItemize}
